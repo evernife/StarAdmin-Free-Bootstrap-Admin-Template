@@ -10713,6 +10713,9 @@ ul {
   .auth.register-bg-1 {
     background: url("../../images/auth/register.jpg") center center no-repeat;
     background-size: cover; }
+  .auth.register-bg-3 {
+    background: url("../../images/auth/register_3.png") center center no-repeat;
+    background-size: cover; }
   .auth.theme-one .auto-form-wrapper {
     background: #fff;
     padding: 40px 40px 10px;
