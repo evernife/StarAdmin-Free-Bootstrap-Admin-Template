@@ -30,4 +30,7 @@ function getUserData() {
     return getCookieOrDefault(cname,def)
 }
 
-
+function getQueryValue(key) {
+    value = (window.location.search.match(new RegExp('[?&]' + key + '=([^&]+)')) || [, null])[1];
+    return value != null ? decodeURIComponent(value) : null;
+}

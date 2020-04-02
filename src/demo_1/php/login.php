@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <?php
-
+session_start();
 function validateOrError($post_var){
     if (!isset($_POST[$post_var])){
-        redirectTo("../login.html?fail=true");
+        header("Location: ../errors/error-500.html");
     }
     return $_POST[$post_var];
 }
@@ -23,16 +23,20 @@ function onUserLogin($username, $password){
     }
     foreach ($tempArray as $account) {
         if ($account->username == $username && $account->password == $password){
+            $_SESSION['username'] = $account->username;
+            $_SESSION['password'] = $account->password;
+            $_SESSION['email'] = $account->email;
+            $_SESSION['fullname'] = $account->fullname;
             return true;
         }
     }
     return false;
 }
 
-if (onUserLogin($username,$password) == true){
-    header('Location: ../blank-page.html');
+if (onUserLogin($username, $password) == true){
+    header('Location: ../dashboard.php');
 }else{
-    header('Location: ../register.html');
+    header('Location: ../login.html?error=Generic');
 }
 ?>
 
