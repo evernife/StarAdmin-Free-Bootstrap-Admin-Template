@@ -10,6 +10,10 @@ if ($('#sales-statistics-overview').length) {
     var data_1_1 = [];
     var data_1_2 = [];
 
+    var data_2_1 = [378.7,279.2,120.4];
+
+
+
     for (i = data_input.length - 25; i < data_input.length - 12; i++){
         data_1_1.push(data_input[i]["Value"])
         //data_1_2.push(null)
@@ -27,13 +31,13 @@ if ($('#sales-statistics-overview').length) {
     var areaData = {
         labels: labelsArray,
         datasets: [{
-            label: 'Penultimo Ano',
+            label: 'Real',
             data: data_1_1,
             borderColor: infoColor,
             backgroundColor: gradientStrokeFill_1,
             borderWidth: 2
         }, {
-            label: 'Dois anos Seguintes',
+            label: 'Previsão',
             data: data_1_2,
             borderColor: successColor,
             backgroundColor: gradientStrokeFill_2,
@@ -111,9 +115,16 @@ if ($('#sales-statistics-overview').length) {
     });
     document.getElementById('sales-statistics-legend').innerHTML = salesChart.generateLegend();
 
-    $("#sales-statistics_switch_1").click(function () {
+    $("#hardcoded-button-one").click(function () {
         var data = salesChart.data;
         data.datasets[0].data = data_1_1;
+        data.datasets[1].data = data_1_2;
+        salesChart.update();
+    });
+
+    $("#hardcoded-button-two").click(function () {
+        var data = salesChart.data;
+        data.datasets[0].data = data_2_1;
         data.datasets[1].data = data_1_2;
         salesChart.update();
     });
