@@ -35,5 +35,14 @@ switch ($page){
         echo file_get_contents('dashboard/js/main/hardcoded.js');
         echo "</script>\n";
         break;
+    case "arima_history":
+        if (isset($_SESSION["file"])){
+            $file = 'data/'.$_SESSION["username"]."/".$_SESSION["file"];
+            echo "<script>\n";
+            echo 'var json_data = '.getJsonEncodedFileFrom($file)."\n";
+            echo file_get_contents('dashboard/js/main/arima_history_view.js');
+            echo "</script>\n";
+        }
+        break;
 }
 ?>

@@ -7,7 +7,15 @@ function getPageFromGet(){
     }
     return $_GET["action"];
 }
+function getFileFromGet(){
+    if (!isset($_GET["file"])){
+        return null;
+    }
+    return $_GET["file"];
+}
 $_SESSION["page"] = getPageFromGet();
+$_SESSION["file"] = getFileFromGet();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
