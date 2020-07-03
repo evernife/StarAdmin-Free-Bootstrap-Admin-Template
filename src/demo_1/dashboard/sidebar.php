@@ -60,6 +60,18 @@ echo '
                 <span class="menu-title">HardCoded Example</span>
             </a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link" href="https://github.com/evernife/StarAdmin-Free-Bootstrap-Admin-Template/tree/master/src/demo_1">
+                <i class="menu-icon typcn typcn-document-text"></i>
+                <span class="menu-title">GitHUB Dashboard</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="https://github.com/evernife/TCC-BigData-Analytics">
+                <i class="menu-icon typcn typcn-document-text"></i>
+                <span class="menu-title">GitHUB Python-API</span>
+            </a>
+        </li>
     </ul>
 </nav>
 '

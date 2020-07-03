@@ -10,7 +10,6 @@ function endswith($string, $test) {
     return substr_compare($string, $test, $strlen - $testlen, $testlen) === 0;
 }
 
-
 function getExportCretionDate($file_name){
     $split = explode("_",$file_name);
     return $split[2] / 1000;
