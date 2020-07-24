@@ -22,7 +22,7 @@ class FCTimeFrame{
         this.year = this.date.getUTCFullYear();
     }
     getFormated(){
-        return this.year + "/" + this.month + "/" + this.day;
+        return this.year + "/" + this.month + "/" + (this.day < 10 ? "0" : "") + this.day;
     }
 }
 
